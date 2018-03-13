@@ -47,6 +47,8 @@ namespace openbanking
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
+            services.AddDbContext<TodoContext>(opt => opt.UseInMemoryDatabase("TodoList"));
+
             services.AddMvc();
 
             // Add application services.

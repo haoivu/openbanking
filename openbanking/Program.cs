@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
+using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
 
 namespace openbanking
 {
@@ -20,5 +23,8 @@ namespace openbanking
 
             host.Run();
         }
+        static HttpClient client = new HttpClient();
+
     }
 }
+
