@@ -13093,11 +13093,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/haoivu/Documents/code/openbanking/openbanking.csproj",
+      "projectUniqueName": "/Users/haoivu/Documents/code/ob/openbanking.csproj",
       "projectName": "openbanking",
-      "projectPath": "/Users/haoivu/Documents/code/openbanking/openbanking.csproj",
+      "projectPath": "/Users/haoivu/Documents/code/ob/openbanking.csproj",
       "packagesPath": "/Users/haoivu/.nuget/packages/",
-      "outputPath": "/Users/haoivu/Documents/code/openbanking/obj/",
+      "outputPath": "/Users/haoivu/Documents/code/ob/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
