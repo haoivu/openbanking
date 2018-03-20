@@ -28,3 +28,15 @@
 /Users/leneberg/Documents/Skule/Bachelor/ob/bin/Debug/netcoreapp2.0/openbanking.runtimeconfig.dev.json
 /Users/leneberg/Documents/Skule/Bachelor/ob/bin/Debug/netcoreapp2.0/openbanking.dll
 /Users/leneberg/Documents/Skule/Bachelor/ob/bin/Debug/netcoreapp2.0/openbanking.pdb
+/home/haoivu/code/ob/bin/Debug/netcoreapp2.0/app.db
+/home/haoivu/code/ob/bin/Debug/netcoreapp2.0/openbanking.deps.json
+/home/haoivu/code/ob/bin/Debug/netcoreapp2.0/openbanking.runtimeconfig.json
+/home/haoivu/code/ob/bin/Debug/netcoreapp2.0/openbanking.runtimeconfig.dev.json
+/home/haoivu/code/ob/bin/Debug/netcoreapp2.0/openbanking.dll
+/home/haoivu/code/ob/bin/Debug/netcoreapp2.0/openbanking.pdb
+/home/haoivu/code/ob/obj/Debug/netcoreapp2.0/openbanking.csproj.CoreCompileInputs.cache
+/home/haoivu/code/ob/obj/Debug/netcoreapp2.0/UserSecretsAssemblyInfo.cs
+/home/haoivu/code/ob/obj/Debug/netcoreapp2.0/openbanking.AssemblyInfoInputs.cache
+/home/haoivu/code/ob/obj/Debug/netcoreapp2.0/openbanking.AssemblyInfo.cs
+/home/haoivu/code/ob/obj/Debug/netcoreapp2.0/openbanking.dll
+/home/haoivu/code/ob/obj/Debug/netcoreapp2.0/openbanking.pdb
