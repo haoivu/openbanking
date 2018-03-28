@@ -56,6 +56,7 @@ namespace openbanking.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginViewModel model, string returnUrl = null)
         {
+            // await HttpContext.ChallengeAsync("NordeaOB", new AuthenticationProperties() { RedirectUri = returnUrl });
             ViewData["ReturnUrl"] = returnUrl;
             if (ModelState.IsValid)
             {
@@ -64,6 +65,7 @@ namespace openbanking.Controllers
                 var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, lockoutOnFailure: false);
                 if (result.Succeeded)
                 {
+                    // await HttpContext.ChallengeAsync("NordeaOB", new AuthenticationProperties() { RedirectUri = returnUrl });
                     _logger.LogInformation("User logged in.");
                     return RedirectToLocal(returnUrl);
                 }
