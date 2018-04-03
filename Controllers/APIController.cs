@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -13,6 +14,7 @@ using openbanking.Models;
 
 namespace openbanking.Controllers
 {
+    [Authorize]
     public class APIController : Controller
     {
         const string ClientId = "216aa0f8-4d76-4f03-ac5f-fd1e65421c65";
@@ -62,6 +64,7 @@ namespace openbanking.Controllers
             }
         }
 
+        [Authorize]
         public async Task<IActionResult> GetAssets()
         {
             //Get assets
@@ -71,6 +74,7 @@ namespace openbanking.Controllers
             return Content(response);
         }
 
+        [Authorize]
         public async Task<IActionResult> GetAccounts()
         {
             //Get assets
