@@ -1,0 +1,6 @@
+@{
+    ViewData["Title"] = "Get Access Code";
+    ViewData["AccessCode"] = $"https://api.nordeaopenbanking.com/v1/authentication?&client_id=216aa0f8-4d76-4f03-ac5f-fd1e65421c65&redirect_uri=http://localhost:5000/auth/nordea&X-Response-Scenarios=AuthenticationSkipUI&state=";
+}
+<h2>@ViewData["Title"]</h2>
+<h3>@ViewData["AccessCode"]</h3>
