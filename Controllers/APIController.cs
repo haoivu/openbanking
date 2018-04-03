@@ -18,7 +18,11 @@ namespace openbanking.Controllers
         const string ClientId = "216aa0f8-4d76-4f03-ac5f-fd1e65421c65";
         const string ClientSecret = "A6sF0cB4bY6cT3qQ4qD6jS1aJ2eP1hJ1iJ6sV5iS5tU4fF8oB5";
         const string AccountId = "FI6593857450293470-EUR";
-        const string RedirectUrl = "http://localhost:5000/auth/nordea";
+        // for testing
+        // const string RedirectUrl = "http://localhost:5000/auth/nordea";
+
+        // for production
+        const string RedirectUrl = "http://obbudgetting.azurewebsites.net/auth/nordea";
 
         private async Task<string> GetDatav1(string url)
         {
