@@ -21,10 +21,10 @@ namespace openbanking.Controllers
         const string ClientSecret = "A6sF0cB4bY6cT3qQ4qD6jS1aJ2eP1hJ1iJ6sV5iS5tU4fF8oB5";
         const string AccountId = "FI6593857450293470-EUR";
         // for testing
-        // const string RedirectUrl = "http://localhost:5000/auth/nordea";
+        const string RedirectUrl = "http://localhost:5000/auth/nordea";
 
         // for production
-        const string RedirectUrl = "http://obbudgetting.azurewebsites.net/auth/nordea";
+        // const string RedirectUrl = "http://obbudgetting.azurewebsites.net/auth/nordea";
 
         private async Task<string> GetDatav1(string url)
         {
@@ -64,7 +64,6 @@ namespace openbanking.Controllers
             }
         }
 
-        [Authorize]
         public async Task<IActionResult> GetAssets()
         {
             //Get assets
@@ -74,7 +73,6 @@ namespace openbanking.Controllers
             return Content(response);
         }
 
-        [Authorize]
         public async Task<IActionResult> GetAccounts()
         {
             //Get assets
@@ -84,12 +82,6 @@ namespace openbanking.Controllers
             return Content(response);
         }
 
-        [HttpGet("API/ByID")]
-        public IActionResult GetAccountID()
-        {
-            var url = $"https://api.nordeaopenbanking.com/v2/accounts/{AccountId}/transactions";
-            return Redirect(url);
-        }
 
         [HttpGet("auth/code")]
         public IActionResult GetAccessCode()
@@ -100,13 +92,15 @@ namespace openbanking.Controllers
 
 
         [Route("auth/nordea")]
-        public async Task<IActionResult> Redirect([FromQuery]AccessCodeModel model)
+        public async Task<IActionResult> GetAccessToken([FromQuery]AccessCodeModel model)
         {
             using (var client = new HttpClient())
             {
                 // Set Client Credentials
                 client.DefaultRequestHeaders.Add("X-IBM-Client-Id", ClientId);
                 client.DefaultRequestHeaders.Add("X-IBM-Client-Secret", ClientSecret);
+                client.DefaultRequestHeaders.Accept.Add(
+                new MediaTypeWithQualityHeaderValue("application/json"));
                 var url = "https://api.nordeaopenbanking.com/v1/authentication/access_token";
 
                 var content = new FormUrlEncodedContent(new[]

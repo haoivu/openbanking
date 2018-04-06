@@ -6262,7 +6262,7 @@
       ]
     },
     "Microsoft.Data.Edm/5.8.2": {
-      "sha512": "P/d8DxA6MFHroBEn/jW0LMQSIKnsRRibrZtRCLfov2boQfrQ1R1BVgkJ5oIhcQsOm0l4POv+I2ny6RBsclNbOw==",
+      "sha512": "XCdeGGUlTAK4cr1vHNwQujC41cMrciFN5iICnqDGv7jSEtPYZkgiVZUdqU3pQ7qfIEj2psg2yENAA3RIiULQlg==",
       "type": "package",
       "path": "microsoft.data.edm/5.8.2",
       "files": [
@@ -6326,7 +6326,7 @@
       ]
     },
     "Microsoft.Data.OData/5.8.2": {
-      "sha512": "oEIUtXcRiKogF0yZxA+QdgxoBJ34989qL/5xOSrTfxAhzNJV5Hw6DRdWgUCpeXFMoJUQx7ptbHCN+My/LCQfsg==",
+      "sha512": "YWQXagFyClVtN+x0Pp6hKmttxmLGxXF2XRbe7QGgJ9ntogrYhdhAM5OSsvIpXspRqxbA2PbKt/h17DqPIm1uRg==",
       "type": "package",
       "path": "microsoft.data.odata/5.8.2",
       "files": [
@@ -12167,7 +12167,7 @@
       ]
     },
     "System.Spatial/5.8.2": {
-      "sha512": "0RfZZJ8RlrfjoBPAF6pczX4Nd2kyLM8EX1PCP5Rqs/jOhJBUPYhpXjIsVAYN7kocj9IJ9XoJWAxWgXIDtJY2Ag==",
+      "sha512": "WnmUCSQiq/9PwqqTb0A5Nbr6JOQ8QOqNCA9tnLxinGl+cAoNDexvPF3LaLbPiFTSPzR6vV5/jdXxiBvWG/X4kA==",
       "type": "package",
       "path": "system.spatial/5.8.2",
       "files": [
