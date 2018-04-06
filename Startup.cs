@@ -107,6 +107,17 @@ namespace openbanking
             {
                 app.UseDeveloperExceptionPage();
                 app.UseDatabaseErrorPage();
+                app.UseBrowserLink();
+
+                using (var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
+                {
+                    var db = serviceScope.ServiceProvider.GetService<ApplicationDbContext>();
+                    
+                    db.Database.EnsureDeleted();
+                    db.Database.EnsureCreated();
+                    
+                    db.SaveChanges();
+                }
             }
             else
             {

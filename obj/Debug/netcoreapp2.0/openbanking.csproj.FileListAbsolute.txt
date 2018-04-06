@@ -40,3 +40,9 @@
 /home/haoivu/code/ob/obj/Debug/netcoreapp2.0/openbanking.AssemblyInfo.cs
 /home/haoivu/code/ob/obj/Debug/netcoreapp2.0/openbanking.dll
 /home/haoivu/code/ob/obj/Debug/netcoreapp2.0/openbanking.pdb
+/Users/haoivu/Documents/code/ob/bin/Debug/netcoreapp2.0/app.db
+/Users/haoivu/Documents/code/ob/bin/Debug/netcoreapp2.0/openbanking.deps.json
+/Users/haoivu/Documents/code/ob/bin/Debug/netcoreapp2.0/openbanking.runtimeconfig.json
+/Users/haoivu/Documents/code/ob/bin/Debug/netcoreapp2.0/openbanking.runtimeconfig.dev.json
+/Users/haoivu/Documents/code/ob/bin/Debug/netcoreapp2.0/openbanking.dll
+/Users/haoivu/Documents/code/ob/bin/Debug/netcoreapp2.0/openbanking.pdb

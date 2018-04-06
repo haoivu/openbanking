@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using openbanking.Models;
+using openbanking.Models.APIViewModels;
 
 namespace openbanking.Controllers
 {
@@ -69,7 +70,7 @@ namespace openbanking.Controllers
             //Get assets
             var response = await GetDatav1("assets");
             //Deserialize
-            //var result = JsonConvert.DeserializeObject<AccountModel>(response);
+            var result = JsonConvert.DeserializeObject<AccountsModel>(response);
             return Content(response);
         }
 
@@ -78,8 +79,8 @@ namespace openbanking.Controllers
             //Get assets
             var response = await GetDatav2("accounts");
             //Deserialize
-            //var result = JsonConvert.DeserializeObject<AccountModel>(response);
-            return Content(response);
+            var result = JsonConvert.DeserializeObject<AccountsModel>(response);
+            return View();
         }
 
 

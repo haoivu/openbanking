@@ -15,6 +15,9 @@ namespace openbanking.Data
         {
         }
 
+        public DbSet<Models.APIViewModels.AccountsModel> AccountList { get; set; }
+
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

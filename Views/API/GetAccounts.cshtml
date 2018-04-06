@@ -5,3 +5,5 @@
 <h3>@ViewData["Message"]</h3>
 
 <p>Show account data</p>
+
+<div>@(await Component.InvokeAsync<openbanking.ViewComponents.AccountList>())</div>
