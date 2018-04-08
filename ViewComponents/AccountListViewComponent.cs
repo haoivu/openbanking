@@ -29,7 +29,7 @@ namespace openbanking.ViewComponents
             var list = await _db.AccountList.ToListAsync();
         
             //list.Sort((x, y) => DateTime.Compare(x.PostedTime, y.PostedTime));
-            list.Reverse();
+
             return View(list);
         }
     }

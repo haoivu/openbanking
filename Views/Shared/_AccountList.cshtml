@@ -1,10 +1,14 @@
 @model openbanking.Models.APIViewModels.AccountsModel
 @inject UserManager<ApplicationUser> UserManager
 @{
-    <tr>
-        <td>@Model.Id</td>
-        <td>@Model.OwnerName</td>
-        <td>@Model.AvailableBalance</td>
-        <td>@Model.ValueDatedBalance</td>
-    </tr>
+    <table>
+        <tbody>
+            <tr>
+                <td>@Model.Id</td>
+                <td>@Model.OwnerName</td>
+                <td>@Model.AvailableBalance</td>
+                <td>@Model.ValueDatedBalance</td>
+            </tr>
+        </tbody>
+    </table>
 }

@@ -116,6 +116,10 @@ namespace openbanking
                     db.Database.EnsureDeleted();
                     db.Database.EnsureCreated();
                     
+                    // Add regular test data here
+                    db.AccountList.Add(new Models.APIViewModels.AccountsModel("1", "NO", "NOK", "Hao Nhien Vu", "SHEKKITILI", "Current", "5172395", "5172395", "5172395"));
+                    db.AccountList.Add(new Models.APIViewModels.AccountsModel("2", "NO", "NOK", "Celine Abigael Tomren", "SHEKKITILI", "Current", "123485", "123485", "123485"));
+
                     db.SaveChanges();
                 }
             }
