@@ -100,6 +100,19 @@ namespace openbanking
             services.AddSession();
         }
 
+        public async Task CreateUsersAndRoles(IServiceScope serviceScope){
+            var userManager = serviceScope.ServiceProvider.GetService<UserManager<ApplicationUser>>();
+            var roleManager = serviceScope.ServiceProvider.GetService<RoleManager<IdentityRole>>();
+
+            // First create the admin role
+            await roleManager.CreateAsync(new IdentityRole("Admin"));
+
+            // Then add one admin user
+            var adminUser = new ApplicationUser { UserName = "admin@uia.no", Email = "admin@uia.no"};
+            await userManager.CreateAsync(adminUser, "Password1.");
+            await userManager.AddToRoleAsync(adminUser, "Admin");
+        }
+
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
@@ -117,10 +130,13 @@ namespace openbanking
                     db.Database.EnsureCreated();
                     
                     // Add regular test data here
-                    db.AccountList.Add(new Models.APIViewModels.AccountsModel("1", "NO", "NOK", "Hao Nhien Vu", "SHEKKITILI", "Current", "5172395", "5172395", "5172395"));
-                    db.AccountList.Add(new Models.APIViewModels.AccountsModel("2", "NO", "NOK", "Celine Abigael Tomren", "SHEKKITILI", "Current", "123485", "123485", "123485"));
+                    db.AccountList.Add(new Models.APIViewModels.AccountsModel(1, "NO", "NOK", "Hao Nhien Vu", "SHEKKITILI", "Current", 5172395, 5172395, 5172395));
+                    db.AccountList.Add(new Models.APIViewModels.AccountsModel(2, "NO", "NOK", "Celine Abigael Tomren", "SHEKKITILI", "Current", 123485, 123485, 123485));
+                    db.AccountList.Add(new Models.APIViewModels.AccountsModel(3, "NO", "NOK", "Lene Åsebø Berg", "SHEKKITILI", "Current", 6141552, 6141552, 6141552));
 
                     db.SaveChanges();
+
+                    CreateUsersAndRoles(serviceScope).Wait();
                 }
             }
             else

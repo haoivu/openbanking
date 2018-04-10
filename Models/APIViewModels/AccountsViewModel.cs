@@ -8,8 +8,8 @@ namespace openbanking.Models.APIViewModels
     {
         public AccountsModel() {}
 
-        public AccountsModel(   string _id, string country, string currency, string ownerName,
-                                string product, string accountType, string availableBalance, string bookedBalance, string valueDatedBalance)
+        public AccountsModel(   int _id, string country, string currency, string ownerName,
+                                string product, string accountType, double availableBalance, double bookedBalance, double valueDatedBalance)
         {
             this.Id = _id;
             this.Country = country;
@@ -21,15 +21,42 @@ namespace openbanking.Models.APIViewModels
             this.BookedBalance = bookedBalance;
             this.ValueDatedBalance = valueDatedBalance;
         }
-        public string Id { get; set; }
+        public int Id { get; set; }
         public string Country { get; set; }
         public string Currency { get; set; }
         public string OwnerName { get; set; }
         public string Product { get; set; }
         public string AccountType { get; set; }
-        public string AvailableBalance { get; set; }
-        public string BookedBalance { get; set; }
-        public string ValueDatedBalance { get; set; }
+        public double AvailableBalance { get; set; }
+        public double BookedBalance { get; set; }
+        public double ValueDatedBalance { get; set; }
         
     }
+
+    // public class AccountsModel
+    // {
+    //     public AccountsModel() {}
+
+    //     public int _id;
+    //     public string country;
+    //     public AccountNumber accountNumber;
+    //     public string currency;
+    //     public string ownerName;
+    //     public string product;
+    //     public string accountType; // Kan være greit med enum her og
+    //     public double availableBalance;
+    //     public double bookedBalance;
+    //     public double valueDatedBalance;
+    //     public AccountLink[] accountLink;
+
+    //     public class AccountNumber {
+    //         public string value;
+    //         public string _type; //Alternativt enums
+    //     }
+
+    //     public class AccountLink {
+    //         public string rel;
+    //         public string href;
+    //     }
+    // }
 }

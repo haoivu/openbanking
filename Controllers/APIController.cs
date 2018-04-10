@@ -83,6 +83,15 @@ namespace openbanking.Controllers
             return View();
         }
 
+        public async Task<IActionResult> GetAccounts2()
+        {
+            //Get assets
+            var response = await GetDatav2("accounts");
+            //Deserialize
+            var result = JsonConvert.DeserializeObject<AccountsModel>(response);
+            return Content(response);
+        }
+
 
         [HttpGet("auth/code")]
         public IActionResult GetAccessCode()

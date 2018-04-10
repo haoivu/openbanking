@@ -1,14 +1,33 @@
 @model openbanking.Models.APIViewModels.AccountsModel
 @inject UserManager<ApplicationUser> UserManager
-@{
-    <table>
-        <tbody>
-            <tr>
-                <td>@Model.Id</td>
-                <td>@Model.OwnerName</td>
-                <td>@Model.AvailableBalance</td>
-                <td>@Model.ValueDatedBalance</td>
-            </tr>
-        </tbody>
-    </table>
+
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
 }
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+
+<table>
+    <tbody>
+        @{
+        <tr>
+            <td>@Model.Id</td>
+            <td>@Model.OwnerName</td>
+            <td>@Model.AvailableBalance</td>
+            <td>@Model.ValueDatedBalance</td>
+        </tr>
+        }
+    </tbody>
+</table>
