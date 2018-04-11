@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
@@ -77,10 +78,19 @@ namespace openbanking.Controllers
         public async Task<IActionResult> GetAccounts()
         {
             //Get assets
-            var response = await GetDatav2("accounts");
+            //var response = await GetDatav2("accounts");
             //Deserialize
-            var result = JsonConvert.DeserializeObject<AccountsModel>(response);
-            return View();
+            //var result = JsonConvert.DeserializeObject<AccountsModel>(response);
+            using (WebClient httpClient = new WebClient())
+            {
+                var response = await GetDatav2("accounts");
+                var jsonData = httpClient.DownloadString("http://localhost:5000/API/GetAccounts2");
+                var data = JsonConvert.DeserializeObject<AccountsModel>(response);
+                Console.Write("data");
+                Console.WriteLine("data");
+                return View("GetAccounts", data);
+            }
+            //return View();
         }
 
         public async Task<IActionResult> GetAccounts2()
@@ -96,7 +106,9 @@ namespace openbanking.Controllers
         [HttpGet("auth/code")]
         public IActionResult GetAccessCode()
         {
-            var url = $"https://api.nordeaopenbanking.com/v1/authentication?&client_id={ClientId}&redirect_uri={RedirectUrl}&X-Response-Scenarios=AuthenticationSkipUI&state=";
+            //this.authWindow = window.open('https://www.facebook.com/v2.11/dialog/oauth?&response_type=token&display=popup&client_id=1528751870549294&display=popup&redirect_uri=http://localhost:5000/facebook-auth.html&scope=email',null,'width=600,height=400');    
+
+            var url = $"https://api.nordeaopenbanking.com/v1/authentication?&client_id={ClientId}&redirect_uri={RedirectUrl}&X-Response-Scenarios=AuthenticationWithUI&state=";
             return Redirect(url);
         }
 
