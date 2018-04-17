@@ -6,6 +6,7 @@ using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
+using System.Web.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -86,20 +87,18 @@ namespace openbanking.Controllers
                 var response = await GetDatav2("accounts");
                 var jsonData = httpClient.DownloadString("http://localhost:5000/API/GetAccounts2");
                 var data = JsonConvert.DeserializeObject<AccountsModel>(response);
-                Console.Write("data");
-                Console.WriteLine("data");
                 return View("GetAccounts", data);
             }
             //return View();
         }
 
-        public async Task<IActionResult> GetAccounts2()
+        public async Task<JsonResult> GetAccounts2()
         {
             //Get assets
             var response = await GetDatav2("accounts");
             //Deserialize
             var result = JsonConvert.DeserializeObject<AccountsModel>(response);
-            return Content(response);
+            return Json(response, JsonRequestBehaviour.AllowGet);
         }
 
 
