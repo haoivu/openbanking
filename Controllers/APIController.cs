@@ -108,13 +108,16 @@ namespace openbanking.Controllers
         {
             //this.authWindow = window.open('https://www.facebook.com/v2.11/dialog/oauth?&response_type=token&display=popup&client_id=1528751870549294&display=popup&redirect_uri=http://localhost:5000/facebook-auth.html&scope=email',null,'width=600,height=400');    
 
-            var url = $"https://api.nordeaopenbanking.com/v1/authentication?&client_id={ClientId}&redirect_uri={RedirectUrl}&X-Response-Scenarios=AuthenticationWithUI&state=";
+            // With UI
+            // var url = $"https://api.nordeaopenbanking.com/v1/authentication?&client_id={ClientId}&redirect_uri={RedirectUrl}&X-Response-Scenarios=AuthenticationWithUI&state=";
+            // Skip UI
+            var url = $"https://api.nordeaopenbanking.com/v1/authentication?&client_id={ClientId}&redirect_uri={RedirectUrl}&X-Response-Scenarios=AuthenticationSkipUI&state=";
             return Redirect(url);
         }
 
 
         [Route("auth/nordea")]
-        public async Task<IActionResult> GetAccessToken([FromQuery]AccessCodeModel model)
+        public async Task<IActionResult> GetAccessCode([FromQuery]AccessCodeModel model)
         {
             using (var client = new HttpClient())
             {
@@ -141,7 +144,8 @@ namespace openbanking.Controllers
 
                 HttpContext.Session.SetString("AccessToken", tokenModel.AccessToken);
 
-                return Json(tokenModel);
+                // return Json(tokenModel);
+                return View();
             }
         }
         public IActionResult Error()
